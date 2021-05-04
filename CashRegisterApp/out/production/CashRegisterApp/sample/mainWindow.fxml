@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+<?import org.fxmisc.richtext.InlineCssTextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<VBox fx:id="mainWindow"
+      fx:controller="sample.Controller"
+      xmlns:fx="http://javafx.com/fxml">
+    <MenuBar>
+        <Menu text="File">
+            <items>
+                <MenuItem text="Search for item" onAction="#showSearchItemDialog"/>
+                <MenuItem text="Add new item" onAction="#showAddNewItemDialog"/>
+                <MenuItem text="Delete item" onAction="#showDeleteItemDialog"/>
+                <MenuItem text="View all items" onAction="#showAllItemWindow"/>
+            </items>
+        </Menu>
+        <Menu text="Settings">
+            <items>
+                <MenuItem text="Add company info" onAction="#showCompanyInfoDialog"/>
+            </items>
+        </Menu>
+    </MenuBar>
+    <HBox spacing="5" style="-fx-background-color: #D3D3D3;">
+        <InlineCssTextArea fx:id="listArea" editable="false" mouseTransparent="true" focusTraversable="false" prefWidth="300" style="-fx-font-family: Consolas; -fx-font-size: 16; -fx-background-color: #F5F5F5">
+
+        </InlineCssTextArea>
+        <VBox spacing="5">
+            <InlineCssTextArea fx:id="inputArea" editable="false" mouseTransparent="true" focusTraversable="false" prefWidth="300" prefHeight="100" style="-fx-font-family: Consolas; -fx-font-size: 16; -fx-background-color: #F5F5F5">
+
+            </InlineCssTextArea>
+            <InlineCssTextArea fx:id="totalArea" editable="false" mouseTransparent="true" focusTraversable="false" prefWidth="300" prefHeight="200" style="-fx-font-family: Consolas; -fx-font-size: 16; -fx-background-color: #F5F5F5">
+
+            </InlineCssTextArea>
+            <InlineCssTextArea fx:id="companyInfoArea" editable="false" mouseTransparent="true" focusTraversable="false" prefWidth="300" prefHeight="300" style="-fx-font-family: Consolas; -fx-font-size: 16; -fx-fill: #0466c8; -fx-background-color: #F5F5F5">
+
+            </InlineCssTextArea>
+        </VBox>
+        <GridPane>
+            <Button text="Void" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="90" prefHeight="90" style="-fx-background-color:#E63946;" onAction="#processVoid"/>
+            <Button text="Debit" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="90" prefHeight="90"/>
+            <Button text="Credit" GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="90" prefHeight="90"/>
+            <Button text="Cash" GridPane.rowIndex="0" GridPane.columnIndex="3" prefWidth="90" prefHeight="90" onAction="#processCash"/>
+            <Button text="Grocery" GridPane.rowIndex="0" GridPane.columnIndex="4" prefWidth="90" prefHeight="90" style="-fx-background-color:#0466c8" onAction="#processItem"/>
+
+
+            <Button text="7" GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="8" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="9" GridPane.rowIndex="1" GridPane.columnIndex="2" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="Qty" GridPane.rowIndex="1" GridPane.columnIndex="3" prefWidth="90" prefHeight="90" onAction="#processQuantity"/>
+            <Button text="Deli" GridPane.rowIndex="1" GridPane.columnIndex="4" prefWidth="90" prefHeight="90" style="-fx-background-color:#0466c8" onAction="#processItem"/>
+
+
+            <Button text="4" GridPane.rowIndex="2" GridPane.columnIndex="0" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="5" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="6" GridPane.rowIndex="2" GridPane.columnIndex="2" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="Code" GridPane.rowIndex="2" GridPane.columnIndex="3" prefWidth="90" prefHeight="90" onAction="#processCode"/>
+            <Button text="Seafood" GridPane.rowIndex="2" GridPane.columnIndex="4" prefWidth="90" prefHeight="90" style="-fx-background-color:#0466c8" onAction="#processItem"/>
+
+
+            <Button text="1" GridPane.rowIndex="3" GridPane.columnIndex="0" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="2" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="3" GridPane.rowIndex="3" GridPane.columnIndex="2" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="No Tax" GridPane.rowIndex="3" GridPane.columnIndex="3" prefWidth="90" prefHeight="90" onAction="#processNoTax"/>
+            <Button text="Bakery" GridPane.rowIndex="3" GridPane.columnIndex="4" prefWidth="90" prefHeight="90" style="-fx-background-color:#0466c8" onAction="#processItem"/>
+
+
+            <Button text="0" GridPane.rowIndex="4" GridPane.columnIndex="0" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="." GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="90" prefHeight="90" onAction="#processNum"/>
+            <Button text="Back" GridPane.rowIndex="4" GridPane.columnIndex="2" prefWidth="90" prefHeight="90" onAction="#processBack"/>
+            <Button text="Total" GridPane.rowIndex="4" GridPane.columnIndex="3" prefWidth="90" prefHeight="90" onAction="#displayTotal"/>
+            <Button text="Produce" GridPane.rowIndex="4" GridPane.columnIndex="4" prefWidth="90" prefHeight="90" style="-fx-background-color:#0466c8;" onAction="#processItem"/>
+        </GridPane>
+    </HBox>
+</VBox>

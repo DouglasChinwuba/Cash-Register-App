@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.SearchItemController"
+            prefHeight="100.0" prefWidth="400.0">
+
+    <content>
+        <GridPane hgap="5" vgap="10">
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="0"  text="Enter item name"/>
+            <TextField fx:id="itemName" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Search"/>
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="0"  text="Quantity"/>
+            <Spinner fx:id="quantity" GridPane.rowIndex="1" GridPane.columnIndex="1" min="1" max="100"/>
+        </GridPane>
+    </content>
+</DialogPane>
